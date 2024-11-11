@@ -1,4 +1,4 @@
-# Equip 2 - Sprint 3
+# Equip II - Sprint III
 
 Veronica - Coordinadora    
 Lorenzo - Bibliografía  
