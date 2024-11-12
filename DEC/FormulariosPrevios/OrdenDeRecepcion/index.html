@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <script src="script.js"> </script>
+    <style>
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Opciones de gestión</h1>
+    <button id="LlistaBtn">Llista</button>
+    <button id="afegeixBtn">Afegeix</button>
+
+    <script>
+        document.getElementById('afegeixBtn').addEventListener('click', function() {
+            window.location.href = 'formulari.html'; 
+        });
+        document.getElementById('LlistaBtn').addEventListener('click', function() {
+            window.location.href = 'llista.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordre de Recepció</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Formulari d'Ordre de Recepció</h1>
+    <form id="ordreForm">
+        <label for="ordreId">ID de l'ordre:</label>
+        <input type="number" id="ordreId" required><br>
+
+        <label for="operari">Operari:</label>
+        <input type="text" id="operari" pattern="[A-Za-z\s]+" required><br>
+
+        <label for="proveidor">Proveïdor:</label>
+        <input type="text" id="proveidor" pattern="[A-Za-z\s]+" required><br>
+
+        <label for="descripcioProducte">Descripció del Producte:</label>
+        <input type="text" id="descripcioProducte" minlength="5" maxlength="100" required><br>
+
+        <label for="quantitatEsperada">Quantitat Esperada:</label>
+        <input type="number" id="quantitatEsperada" min="1" required><br>
+
+        <label for="quantitatRecibida">Quantitat Rebuda:</label>
+        <input type="number" id="quantitatRecibida" min="0" required><br>
+
+        <label for="dataEstimada">Data Estimada:</label>
+        <input type="date" id="dataEstimada" required><br>
+
+        <label for="acceptacio">Acceptació:</label>
+        <select id="acceptacio" required>
+            <option value="">Selecciona una opció</option>
+            <option value="Forçosa">Forçosa</option>
+            <option value="Rebutjada">Rebutjada</option>
+            <option value="Completada">Completada</option>
+        </select><br>
+
+        <label for="estatProces">Estat del Procés:</label>
+        <select id="estatProces" required>
+            <option value="">Selecciona un estat</option>
+            <option value="Pendent">Pendent</option>
+            <option value="Descarregada">Descarregada</option>
+            <option value="Desempaquetada">Desempaquetada</option>
+            <option value="Emmagatzemada">Emmagatzemada</option>
+            <option value="Completada">Completada</option>
+        </select><br>
+
+        <div id="errorMensaje" style="color: red;"></div>
+
+        <button type="button" id="enviar">Enviar</button>
+        <button type="button" id="volverIndex">Tornar a l'índex</button>
+    </form>
+</body>
+</html>

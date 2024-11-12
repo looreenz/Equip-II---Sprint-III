@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Proveedor</title>
+    <script src="modificar.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .valid {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Editar Proveedor</h2>
+    <form id="modificarFormulario">
+        <table>
+            <tr>
+                <td>Código: </td>
+                <td>
+                    <input type="text" id="codigo" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Nombre fiscal:</td>
+                <td>
+                    <input type="text" id="nombreFiscal" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Nombre comercial:</td>
+                <td>
+                    <input type="text" id="nombreComercial" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>NIF:</td>
+                <td>
+                    <input type="text" id="nif" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Dirección</td>
+                <td>
+                    <input type="text" id="direccion" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Código postal:</td>
+                <td>
+                    <input type="text" id="cp" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Ciudad</td>
+                <td>
+                    <input type="text" name="ciudad" id="ciudad">
+                </td>
+            </tr>
+            <tr>
+                <td>Provincia:</td>
+                <td>
+                    <input type="text" id="provincia" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>País:</td>
+                <td>
+                    <input type="text" id="pais" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Correo electrónico:</td>
+                <td>
+                    <input type="email" id="email" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Teléfono</td>
+                <td>
+                    <input type="tel" id="telefono" required /><br/>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" id="guardar">Guardar</button>
+                    <button type="button" id="cancelar">Cancelar</button>
+                </td>
+            </tr>
+        </table>        
+        <p id="mensajeError" class="error"></p>
+    </form>
+    
+</body>
+</html>

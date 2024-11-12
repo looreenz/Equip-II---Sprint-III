@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de orden de recepción</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="GestionOrdenRecepcion.js" defer></script>
+</head>
+<body onload="cargarDatos()">
+    <div id="formulario-completo">
+        <header>
+            <h2>Gestión de orden de recepción</h2>
+        </header>   
+        <div id="container">
+            <form>
+                <label for="identificador">ID del producte: </label>
+                <input type="text" id="identificador" placeholder="ID09567482" required pattern="^ID\d{8}$">
+                <br>
+                <br>
+                <label for="operario">Operario:</label>
+                <input type="text" id="operario" pattern="[A-Za-z]{1,15}" placeholder="Indica un operario" required>
+                <br>
+                <br>
+                <label for="proveidor">Proveidor:</label>
+                <select id="proveidor" required>
+                    <option value="" disabled selected>Selecciona una opción:</option>
+                    <option value="TostaRica">TostaRica</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Tarradellas">Casa Tarradellas</option>
+                </select>
+                <br>
+                <br>
+                <label for="dataEstimada">Data Estimada:</label>
+                <input type="date" id="dataEstimada" required>
+                <br>
+                <br>
+                <label for="descripcion">Descripción del producto:</label>
+                <input type="text" id="descripcion" placeholder="Describe el producto" required pattern="^.{15,40}$">
+                <br>
+                <br>
+                <label for="pedido">Cantidad pedida:</label>
+                <input type="text" id="pedido" placeholder="Inserte una cantidad" required pattern="^\d+$">
+                <br>
+                <br>
+                <label for="recibido">Cantidad recibida:</label>
+                <input type="text" id="recibido" placeholder="Inserte una cantidad" required pattern="^\d+$">
+                <br>
+                <br>
+                <label for="estado">Seleccione un estado:</label>
+                <select id="estado" required>
+                    <option value="" disabled selected>Selecciona una opción:</option>
+                    <option value="forzosa">Forzosa</option>
+                    <option value="rechazada">Rechazada</option>
+                    <option value="completada">Completada</option>
+                </select>
+                <br>
+                <br>
+                <label for="recepcion">Selecciona un estado de recepcion:</label>
+                <select id="recepcion" required>
+                    <option value="" disabled selected>Selecciona una opción:</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="descargada">Descargada</option>
+                    <option value="desempaquetada">Desempaquetada</option>
+                    <option value="almacenada">Almacenada</option>
+                </select>
+                <br>
+                <br>
+                <button id="enviar" onclick="validarDatos(event)">Enviar Ordren</button>
+                <button id="funcion" onclick="window.location.href='SelectorFuncion.html'">Ir al selector de funciones</button>
+            </form>
+            <br>
+            <div id="errores" style="color: red;"></div>
+        </div>
+    </div>
+</body>
+</html>
