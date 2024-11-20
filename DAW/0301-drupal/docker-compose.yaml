@@ -1,0 +1,42 @@
+services:
+    web:
+        build: 
+            context: .
+            dockerfile: php.Dockerfile
+        container_name: php-apache
+        ports:
+            - "8888:80"
+        volumes:
+            - ./drupal:/var/www/html
+            - ./apache-config/apache-drupal.conf:/etc/apache2/sites-available/000-default.conf
+        depends_on:
+            - db
+
+    admin:
+        image: phpmyadmin:5.2.1
+        container_name: phpmyadmin
+        ports:
+            - "8088:80"
+        depends_on:
+            - db
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root
+            - MYSQL_ROOT_PASSWORD=root
+
+    db:
+        build:
+            context: .
+            dockerfile: db.Dockerfile
+        container_name: mariadb
+        environment:
+            - MARIADB_ROOT_PASSWORD=root
+            - MARIADB_DATABASE=drupal
+            - MARIADB_USER=root
+            - MARIADB_PASSWORD=root
+        ports:
+            - "3333:3306"
+        volumes:
+            - db_data:/var/lib/mysql
+volumes:
+    db_data:
